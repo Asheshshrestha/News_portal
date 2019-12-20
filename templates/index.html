@@ -1,0 +1,289 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+
+<title>{% block title %}
+
+{% endblock title %}</title>
+
+ {% block header %}
+ {% include "partials/header.html" %}
+ {% endblock header  %}
+{% block navarea %}
+{% include "partials/navarea.html" %}
+{% endblock navarea %}
+{% block latest_news %}
+{% include "partials/latest_news.html" %}
+{% endblock latest_news %}
+{% block slider %}
+{% include "partials/slider.html" %}
+{% endblock slider %}
+{% block content %}
+
+<section id="contentSection">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        <div class="left_content">
+          <div class="single_post_content">
+            <h2><span>International</span></h2>
+            
+            {% for news in  list_news %}
+              {% if forloop.counter == 1 and news.category == '3' %}
+               <div class="single_post_content_left">
+              <ul class="business_catgnav  wow fadeInDown">
+                <li>
+                  <figure class="bsbig_fig"> <a href="{{news.get_absolute_url}}" class="featured_img"> <img alt="" src="{{ news.cover_image.url }}"> <span class="overlay"></span> </a>
+                    <figcaption> <a href="{{news.get_absolute_url}}">{{news.title}}s</a> </figcaption>
+                    <p>{{news.article|truncatewords:10}}<a class="btn btn-primary" href="{{news.get_absolute_url}}">Read More</a></p>
+                  </figure>
+                </li>
+              </ul>
+            </div>
+            
+              {% endif %}
+              {% endfor %}
+              <div class="single_post_content_right">
+              <ul class="spost_nav">
+              {% for news in list_news %}
+                 {% if forloop.counter > 1 and news.category == '3' %}
+                <li>
+                  <div class="media wow fadeInDown"> <a href="{{news.get_absolute_url}}" class="media-left"> <img alt="" src="{{ news.cover_image.url}}"> </a>
+                    <div class="media-body"> <a href="{{news.get_absolute_url}}" class="catg_title"> {{news.title}}</a> </div>
+                  </div>
+                </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="fashion_technology_area">
+            <div class="fashion">
+              <div class="single_post_content">
+                <h2><span>Entertainment</span></h2>
+                {% for news in  list_news %}
+              {% if forloop.counter == 1 and news.category == '2' %}
+               
+              <ul class="business_catgnav  wow fadeInDown">
+                <li>
+                  <figure class="bsbig_fig"> <a href="{{news.get_absolute_url}}" class="featured_img"> <img alt="" src="{{ news.cover_image.url }}"> <span class="overlay"></span> </a>
+                    <figcaption> <a href="{{news.get_absolute_url}}">{{news.title}}s</a> </figcaption>
+                    <p>{{news.article|truncatewords:10}}<a class="btn btn-primary" href="{{news.get_absolute_url}}">Read More</a></p>
+                  </figure>
+                </li>
+              </ul>
+            
+            
+              {% endif %}
+              {% endfor %}
+              
+              <ul class="spost_nav">
+              {% for news in list_news %}
+                 {% if forloop.counter > 1 and news.category == '2' %}
+                <li>
+                  <div class="media wow fadeInDown"> <a href="{{news.get_absolute_url}}" class="media-left"> <img alt="" src="{{ news.cover_image.url}}"> </a>
+                    <div class="media-body"> <a href="{{news.get_absolute_url}}" class="catg_title"> {{news.title}}</a> </div>
+                  </div>
+                </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+              </div>
+            </div>
+            <div class="technology">
+              <div class="single_post_content">
+                <h2><span>Sports</span></h2>
+                {% for news in  list_news %}
+              {% if forloop.counter == 1 and news.category == '1' %}
+               
+              <ul class="business_catgnav  wow fadeInDown">
+                <li>
+                  <figure class="bsbig_fig"> <a href="{{news.get_absolute_url}}" class="featured_img"> <img alt="" src="{{ news.cover_image.url }}"> <span class="overlay"></span> </a>
+                    <figcaption> <a href="{{news.get_absolute_url}}">{{news.title}}s</a> </figcaption>
+                    <p>{{news.article|truncatewords:10}}<a class="btn btn-primary" href="{{news.get_absolute_url}}">Read More</a></p>
+                  </figure>
+                </li>
+              </ul>
+            
+            
+              {% endif %}
+              {% endfor %}
+              
+              <ul class="spost_nav">
+              {% for news in list_news %}
+                 {% if forloop.counter > 1 and news.category == '1' %}
+                <li>
+                  <div class="media wow fadeInDown"> <a href="{{news.get_absolute_url}}" class="media-left"> <img alt="" src="{{ news.cover_image.url}}"> </a>
+                    <div class="media-body"> <a href="{{news.get_absolute_url}}" class="catg_title"> {{news.title}}</a> </div>
+                  </div>
+                </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+              </div>
+            </div>
+          </div>
+          <div class="single_post_content">
+            <h2><span>Poltics</span></h2>
+            {% for news in  list_news %}
+              {% if forloop.counter == 1 and news.category == '0' %}
+               <div class="single_post_content_left">
+              <ul class="business_catgnav  wow fadeInDown">
+                <li>
+                  <figure class="bsbig_fig"> <a href="{{news.get_absolute_url}}" class="featured_img"> <img alt="" src="{{ news.cover_image.url }}"> <span class="overlay"></span> </a>
+                    <figcaption> <a href="{{news.get_absolute_url}}">{{news.title}}s</a> </figcaption>
+                    <p>{{news.article|truncatewords:10}}<a class="btn btn-primary" href="{{news.get_absolute_url}}">Read More</a></p>
+                  </figure>
+                </li>
+              </ul>
+            </div>
+            
+              {% endif %}
+              {% endfor %}
+              <div class="single_post_content_right">
+              <ul class="spost_nav">
+              {% for news in list_news %}
+                 {% if forloop.counter > 1 and news.category == '0' %}
+                <li>
+                  <div class="media wow fadeInDown"> <a href="{{news.get_absolute_url}}" class="media-left"> <img alt="" src="{{ news.cover_image.url}}"> </a>
+                    <div class="media-body"> <a href="{{news.get_absolute_url}}" class="catg_title"> {{news.title}}</a> </div>
+                  </div>
+                </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="single_post_content">
+            <h2><span>Photography</span></h2>
+            <ul class="photograph_nav  wow fadeInDown">
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="{% static 'images/photograph_img2.jpg' %}" title="Photography Ttile 1"> <img src="{% static 'images/photograph_img2.jpg' %}" alt=""/></a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="{% static 'images/photograph_img3.jpg' %}" title="Photography Ttile 2"> <img src="{% static 'images/photograph_img3.jpg' %}" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="{% static 'images/photograph_img4.jpg' %}" title="Photography Ttile 3"> <img src="{% static 'images/photograph_img4.jpg' %}" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="{% static 'images/photograph_img4.jpg' %}" title="Photography Ttile 4"> <img src="{% static 'images/photograph_img4.jpg' %}" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="{% static 'images/photograph_img2.jpg' %}" title="Photography Ttile 5"> <img src="{% static 'images/photograph_img2.jpg' %}" alt=""/> </a> </figure>
+                </div>
+              </li>
+              <li>
+                <div class="photo_grid">
+                  <figure class="effect-layla"> <a class="fancybox-buttons" data-fancybox-group="button" href="{% static 'images/photograph_img3.jpg' %}" title="Photography Ttile 6"> <img src="{% static 'images/photograph_img3.jpg' %}" alt=""/> </a> </figure>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <aside class="right_content">
+          <div class="single_sidebar">
+            <h2><span>Popular Post</span></h2>
+            <ul class="spost_nav">
+            {% for pop_news in list_top_news %}
+              <li>
+              <div class="media wow fadeInDown"> <a href="{{pop_news.get_absolute_url}}" class="media-left"> <img alt="" src="{{pop_news.cover_image.url}}"> </a>
+                  <div class="media-body"> <a href="{{pop_news.get_absolute_url}}" class="catg_title">{{pop_news.title}}</a> </div>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="single_sidebar">
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active"><a href="#category" aria-controls="home" role="tab" data-toggle="tab">Category</a></li>
+              <li role="presentation"><a href="#video" aria-controls="profile" role="tab" data-toggle="tab">Video</a></li>
+              <li role="presentation"><a href="#comments" aria-controls="messages" role="tab" data-toggle="tab">Comments</a></li>
+            </ul>
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="category">
+                <ul>
+                  <li class="cat-item"><a href="#">Sports</a></li>
+                  <li class="cat-item"><a href="#">Fashion</a></li>
+                  <li class="cat-item"><a href="#">Business</a></li>
+                  <li class="cat-item"><a href="#">Technology</a></li>
+                  <li class="cat-item"><a href="#">Games</a></li>
+                  <li class="cat-item"><a href="#">Life &amp; Style</a></li>
+                  <li class="cat-item"><a href="#">Photography</a></li>
+                </ul>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="video">
+                <div class="vide_area">
+                  <iframe width="100%" height="250" src="http://www.youtube.com/embed/h5QWbURNEpA?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="comments">
+                <ul class="spost_nav">
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{% static 'images/post_img1.jpg' %}"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 1</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{% static 'images/post_img2.jpg' %}"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 2</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{% static 'images/post_img1.jpg' %}"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 3</a> </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="media wow fadeInDown"> <a href="pages/single_page.html" class="media-left"> <img alt="" src="{% static 'images/post_img2.jpg' %}"> </a>
+                      <div class="media-body"> <a href="pages/single_page.html" class="catg_title"> Aliquam malesuada diam eget turpis varius 4</a> </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="single_sidebar wow fadeInDown">
+            <h2><span>Sponsor</span></h2>
+            <a class="sideAdd" href="#"><img src="{% static 'images/add_img.jpg' %}" alt=""></a> </div>
+          <div class="single_sidebar wow fadeInDown">
+            <h2><span>Category Archive</span></h2>
+            <select class="catgArchive">
+              <option>Select Category</option>
+              <option>Life styles</option>
+              <option>Sports</option>
+              <option>Technology</option>
+              <option>Treads</option>
+            </select>
+          </div>
+          <div class="single_sidebar wow fadeInDown">
+            <h2><span>Links</span></h2>
+            <ul>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Rss Feed</a></li>
+              <li><a href="#">Login</a></li>
+              <li><a href="#">Life &amp; Style</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+{% block footer %}
+{% include "partials/footer.html" %}
+{% endblock footer %}
+
+{% block script %}
+{% include "partials/script.html" %}
+{% endblock script %}

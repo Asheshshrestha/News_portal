@@ -1,0 +1,10 @@
+            <div class="row mt-1" id="comment-list">
+              <div class="col-sm-5">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <strong>{{comment.commentator}}</strong> <span class="text-muted">Commented at{{ comment.created_at| time:"H:i A" }}</span>
+                  </div>
+                <div class="panel-body">
+                 <p >{{comment.comment}}</p>
+              </div><!-- /panel-body -->
+            </div>

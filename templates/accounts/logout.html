@@ -1,0 +1,43 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+<title>{% block title %}
+
+{% endblock title %}</title>
+
+ {% block header %}
+ {% include "partials/header.html" %}
+ {% endblock header  %}
+{% block navarea %}
+{% include "partials/navarea.html" %}
+{% endblock navarea %}
+
+{% block content %}
+
+<section id="contentSection">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2">
+
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-8">
+            <h2>You have been Log Out!</h2>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    <a class="btn btn-sm" href="{% url 'login' %}">Login Again</a>
+                </small>
+            </div>
+      </div>
+      <div class="col-lg-2 col-md-4 col-sm-2">
+        
+      </div>
+    </div>
+  
+  </section>
+{% endblock content %}
+{% block footer %}
+{% include "partials/footer.html" %}
+{% endblock footer %}
+
+{% block script %}
+{% include "partials/script.html" %}
+{% endblock script %}

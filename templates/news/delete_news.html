@@ -1,0 +1,50 @@
+{% extends "partials/layout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block header %}
+{% include "partials/header.html" %}
+{% endblock header  %}
+{% block navarea %}
+{% include "partials/navarea.html" %}
+
+{% endblock navarea %}
+{% block content %}
+<section id="contentSection">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2">
+      </div>
+
+      <div class="col-lg-8 col-md-8 col-sm-8">
+       <p> Do you really want to delete?</p>
+        <form method="POST">
+        {% csrf_token %}
+            <button type="submit" class="btn btn-default">Yes</button>
+            <button type="submit" class="btn btn-default">No</button>
+        <div class="form-group">        
+          <div class="col-sm-offset-2 col-sm-10">
+        </div>
+        <div class="form-group">        
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+            </div>
+          </div>
+        </div>
+      <div class="form-group">        
+        <div class="col-sm-offset-2 col-sm-10">
+      </div>
+      </div>
+      </form>
+      </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+    </div>
+</section>
+{% endblock content %}
+
+{% block footer %}
+{% include "partials/footer.html" %}
+
+{% endblock footer %}
+{% block script %}
+{% include "partials/script.html" %}
+{% endblock script %}
